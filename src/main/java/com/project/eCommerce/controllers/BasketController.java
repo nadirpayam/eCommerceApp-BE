@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.project.eCommerce.entities.Basket;
+import com.project.eCommerce.repositories.BasketRepository;
+import com.project.eCommerce.response.BasketResponse;
 import com.project.eCommerce.reuqests.BasketCreateRequest;
 import com.project.eCommerce.reuqests.BasketUpdateRequest;
 import com.project.eCommerce.services.BasketService;
@@ -29,15 +31,18 @@ public class BasketController {
 	}
 
 	@GetMapping
-	public List<Basket> getAllBasket(@RequestParam Optional<Long> userId,
-			@RequestParam Optional<Long> productId) {
-		return basketService.getAllBasketWithParam(userId,productId);
+	public List<BasketResponse> getAllComments(@RequestParam Optional<Long> userId, 
+			@RequestParam Optional<Long> product) {
+		return basketService.getAllBasketWithParam(userId, product);
 	}
 	
 	@GetMapping("/{basketId}")
-	public Basket getOneBasket(@PathVariable Long basketId) {
+	public Basket getOneComment(@PathVariable Long basketId) {
 		return basketService.getOneBasketById(basketId);
 	}
+	
+
+
 	
 	@PostMapping
 	public Basket createOneBasket(@RequestBody BasketCreateRequest request) {

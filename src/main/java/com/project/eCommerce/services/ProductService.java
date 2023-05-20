@@ -44,13 +44,13 @@ public class ProductService {
 	}
 
 	public String createOneProduct(MultipartFile file, String name, double price, String category) throws IOException {
-		File convertFile = new File("C:\\Users\\nadir\\MyAllProjects\\SpringBoot-ReactJS\\YazilimProjeYonetimi\\FE\\ecommerce\\public\\Images\\" + file.getOriginalFilename());
+		File convertFile = new File("C:\\Users\\nadir\\MyAllProjects\\SpringBoot-ReactJS\\YazilimProjeYonetimi\\FE\\ecommercefe\\public\\images\\" + file.getOriginalFilename());
 		convertFile.createNewFile();
 		FileOutputStream fout = new FileOutputStream(convertFile);
 		fout.write(file.getBytes());
 		fout.close();
 
-		String imageUrl = "./Images/" + file.getOriginalFilename();
+		String imageUrl = "./images/" + file.getOriginalFilename();
 
 		Product product = new Product();
 		product.setName(name);

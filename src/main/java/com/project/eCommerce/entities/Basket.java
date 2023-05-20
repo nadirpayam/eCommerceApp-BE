@@ -18,12 +18,12 @@ public class Basket {
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "user_id", nullable = false)
 	@OnDelete(action = OnDeleteAction.CASCADE)
-	private User userId;
+	private User user;
 
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "product_id", nullable = false)
 	@OnDelete(action = OnDeleteAction.CASCADE)
-	private Product productId;
+	private Product product;
 
 	private String state;
 
@@ -35,20 +35,20 @@ public class Basket {
 		this.basketId = basketId;
 	}
 
-	public User getUserId() {
-		return userId;
+	public User getUser() {
+		return user;
 	}
 
-	public void setUserId(User userId) {
-		this.userId = userId;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
-	public Product getProductId() {
-		return productId;
+	public Product getProduct() {
+		return product;
 	}
 
-	public void setProductId(Product productId) {
-		this.productId = productId;
+	public void setProduct(Product product) {
+		this.product = product;
 	}
 
 	public String getState() {

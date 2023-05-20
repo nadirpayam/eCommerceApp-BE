@@ -5,13 +5,16 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.project.eCommerce.entities.Basket;
+import com.project.eCommerce.response.BasketResponse;
 
 public interface BasketRepository extends JpaRepository<Basket, Long> {
 
-	List<Basket> findByUserIdAndProductId(Long userId, Long productId);
+	List<Basket> findByUserUserIdAndProductProductId(Long userId, Long productId);
 
-	List<Basket> findByUserId(Long userId);
+	List<Basket> findByUserUserId(Long userId);
 
-	List<Basket> findByProductId(Long productId);
+	List<Basket> findByProductProductId(Long productId);
+
+
 
 }
